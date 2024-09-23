@@ -76,12 +76,33 @@ WSGI_APPLICATION = 'inventario2024.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+# -----------------------------DataBase Original ------------------------------------------
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# -----------------------------DataBase Original ------------------------------------------
+
+
+
+
+# -----------------------------DataBase Supabase   ------------------------------------------
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',                                # El nombre de la base de datos en Supabase
+        'USER': 'postgres.mgbmwshjucgeccbdvorn',           # Usuario que te proporciona Supabase
+        'PASSWORD': 'inventorYtiene9letras',               # Contraseña de tu base de datos
+        'HOST': 'aws-0-us-west-1.pooler.supabase.com',     # Host de tu base de datos (proporcionado por Supabase)
+        'PORT': '6543',                                    # El puerto es normalmente 5432 para PostgreSQL
     }
 }
+# -----------------------------DataBase Supabase   ------------------------------------------
+
+
 
 
 # Password validation
