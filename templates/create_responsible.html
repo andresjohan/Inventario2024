@@ -1,0 +1,18 @@
+<h1>Conexion Exitosa A HTML</h1>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear</title>
+</head>
+<body>
+    <h1>Actualizar Libro</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+</body>
+</html>

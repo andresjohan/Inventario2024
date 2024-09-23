@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.views import View
 from django.http import HttpResponse
+from .forms import FormResponsableVenta
 from .models import VentasRealizadas,ResponsableVenta
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -13,9 +15,17 @@ import json
 # Crear usuario utilizando los formularios
 
 
+class CreatedResponsable(View):
+
+    def get(self,request):
+        form = FormResponsableVenta()
+        print('Entramos al metodo Get ahora validar si si hace la Renderizacion y Crear la plantilla')
+        context={'form':form}
+        return render(request,'create_responsible.html',context)
+
+
 @csrf_exempt
 def index(request):
-
 
     if request.method == 'POST':
         data = json.loads(request.body) 
@@ -25,4 +35,6 @@ def index(request):
         print('El Nombre Ingresado es   ',nombre)
         
 
-    return HttpResponse('<h1>Conectado Exitosamente </h1>')
+    return HttpResponse('<h1>Conectado Exitosamente al Index</h1>')
+
+
