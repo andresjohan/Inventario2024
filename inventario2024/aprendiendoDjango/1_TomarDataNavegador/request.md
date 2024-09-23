@@ -1,3 +1,3 @@
 #                   Obtencion data   
 ----------------------------------------------------                                                  
-`request.POST.get('name')` | `reques.data`
+`request.POST.get('name')` | `request.data`
