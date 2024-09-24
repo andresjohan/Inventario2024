@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from curses.ascii import isalpha
+from django.shortcuts import render,redirect
 from django.views import View
 from django.http import HttpResponse
 from .forms import FormResponsableVenta
@@ -19,9 +20,38 @@ class CreatedResponsable(View):
 
     def get(self,request):
         form = FormResponsableVenta()
-        print('Entramos al metodo Get ahora validar si si hace la Renderizacion y Crear la plantilla')
+        print('Entramos al metodo Get ')
         context={'form':form}
         return render(request,'create_responsible.html',context)
+    
+
+    # ----------------------------Pendientes----------------------------------
+        #"Validar que no permita repetidos --> esto lo puedo hacer poniendo una restrincion en SQL y migrar o aqui mas facil"
+        # Cuadrar Validacion para que solo permita letras en los nombres no numeros o nombres con sentido
+    def post(self,request):
+
+        
+        if request.method == 'POST':
+            print('Entro por el metodo post osea que capturamos los Datos')
+            form = FormResponsableVenta(request.POST)
+
+
+            # Validamos que los datos sean Validos
+            if form.is_valid():
+                form.save()
+
+                print('Creacion Exitosa ahora lo redirigimos a una lista con todos los usuarios de ventas')
+                responsablesVenta = ResponsableVenta.objects.all()
+
+
+                # Enviamos listado De todos los Usuario Responsables de Ventas 
+                context={'responsables':responsablesVenta}
+                return render(request,'listado_responsables.html',context)
+
+            # Si no Son Validos Returnamos nuevamente a Creacion del Formulario
+            return redirect('responsable')
+        return HttpResponse('Flujo De Programa Correcto')
+            
 
 
 @csrf_exempt

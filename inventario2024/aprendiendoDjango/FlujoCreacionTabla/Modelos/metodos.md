@@ -6,3 +6,9 @@
 # FiltradoEliminacion         |
    "model.objects.filter      |
    (name=name).delete()"      |
+
+
+#                                  Mostrar 
+# Listar Todo
+  `productos = Producto.objects.all()`
+

@@ -1,5 +1,5 @@
 # AlmacenadoValo               |  ValidacionFormulario       | PararAlmacenadoAutomatico
-  "form.save()"          |                             | "save(commit=False)"
+  "form.save()"                |                             | "save(commit=False)"
 
 # tomar ValoresFormulario
   "instance = form.save(commit=False)"
