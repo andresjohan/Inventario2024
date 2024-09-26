@@ -1,0 +1,42 @@
+.box{
+    display: flex;
+    flex-direction: row; 
+    width: 100px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    border: 2px,solid,black;
+    background: black;
+    text-align: center;
+    color: white;
+    
+}
+
+
+
+.flexbox{
+    /* height: 360px; */
+    display: flex;
+    border: solid black 3px;
+    margin: 40px;
+    flex-flow: row wrap;  /*Abrevia Las Dos Anteriores */ 
+    align-items: stretch;
+
+
+}
+
+.flexbox-item{
+    text-align: center;
+    width: 100px;  /* justify-content: space-evenly; */
+    height: 80px;
+    /* background: linear-gradient(); */
+    background: radial-gradient(to right, black, rgb(0, 238, 255));
+    /* background: radial-gradient(circle,  black, rgb(0, 238, 255)); */
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    /* direction: rtl; */
+    color: white
+
+}

@@ -1,16 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'styles.css' %}">
     <title>Document</title>
 </head>
 <body>
     <h1>Listado De Usuarios   ....</h1>
         <div>
-            <ul>
+            <ul class="flexbox">
                 {% for responsable in responsables %}
-                <li>Responsable: {{ responsable.nombre }} </li>
+                <li class="flexbox-item">{{ responsable.id }}:  {{ responsable.nombre }} </li>
                 {% endfor %}
             </ul>
         </div>

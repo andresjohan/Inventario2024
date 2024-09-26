@@ -53,18 +53,13 @@ class CreatedResponsable(View):
         return HttpResponse('Flujo De Programa Correcto')
             
 
+class UpdateResponsable(View):
+    
+    pass
 
-@csrf_exempt
-def index(request):
 
-    if request.method == 'POST':
-        data = json.loads(request.body) 
 
-        nombre = data.get('name', None)
-
-        print('El Nombre Ingresado es   ',nombre)
-        
-
-    return HttpResponse('<h1>Conectado Exitosamente al Index</h1>')
+class DeleteResponsable(View):
+    pass
 
 

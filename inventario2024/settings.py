@@ -23,6 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-0d^%s1ntb04o66&m2x5n%&l_&y#_t4f1=v^_!cge3e+c2&=9!h'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -55,6 +56,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'inventario2024.urls'
 
+
+# -----------------Configuracion Templates----------------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -70,6 +73,9 @@ TEMPLATES = [
         },
     },
 ]
+# -----------------Configuracion Templates----------------------------
+
+
 
 WSGI_APPLICATION = 'inventario2024.wsgi.application'
 
@@ -136,11 +142,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+# -----------------Configuracion Archivos Staticos ---------------------------
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# -----------------Configuracion Archivos Staticos ---------------------------
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
